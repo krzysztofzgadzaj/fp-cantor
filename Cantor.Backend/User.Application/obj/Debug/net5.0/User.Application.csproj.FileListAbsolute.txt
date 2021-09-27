@@ -1,0 +1,14 @@
+C:\Users\zgadz\OneDrive\Pulpit\fp-cantor\Cantor.Backend\User.Application\bin\Debug\net5.0\User.Application.deps.json
+C:\Users\zgadz\OneDrive\Pulpit\fp-cantor\Cantor.Backend\User.Application\bin\Debug\net5.0\User.Application.dll
+C:\Users\zgadz\OneDrive\Pulpit\fp-cantor\Cantor.Backend\User.Application\bin\Debug\net5.0\ref\User.Application.dll
+C:\Users\zgadz\OneDrive\Pulpit\fp-cantor\Cantor.Backend\User.Application\bin\Debug\net5.0\User.Application.pdb
+C:\Users\zgadz\OneDrive\Pulpit\fp-cantor\Cantor.Backend\User.Application\obj\Debug\net5.0\User.Application.csproj.AssemblyReference.cache
+C:\Users\zgadz\OneDrive\Pulpit\fp-cantor\Cantor.Backend\User.Application\obj\Debug\net5.0\User.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\zgadz\OneDrive\Pulpit\fp-cantor\Cantor.Backend\User.Application\obj\Debug\net5.0\User.Application.AssemblyInfoInputs.cache
+C:\Users\zgadz\OneDrive\Pulpit\fp-cantor\Cantor.Backend\User.Application\obj\Debug\net5.0\User.Application.AssemblyInfo.cs
+C:\Users\zgadz\OneDrive\Pulpit\fp-cantor\Cantor.Backend\User.Application\obj\Debug\net5.0\User.Application.csproj.CoreCompileInputs.cache
+C:\Users\zgadz\OneDrive\Pulpit\fp-cantor\Cantor.Backend\User.Application\obj\Debug\net5.0\User.Application.dll
+C:\Users\zgadz\OneDrive\Pulpit\fp-cantor\Cantor.Backend\User.Application\obj\Debug\net5.0\ref\User.Application.dll
+C:\Users\zgadz\OneDrive\Pulpit\fp-cantor\Cantor.Backend\User.Application\obj\Debug\net5.0\User.Application.pdb
+C:\Users\zgadz\OneDrive\Pulpit\fp-cantor\Cantor.Backend\User.Application\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\zgadz\OneDrive\Pulpit\fp-cantor\Cantor.Backend\User.Application\obj\Debug\net5.0\User.Application.csproj.CopyComplete

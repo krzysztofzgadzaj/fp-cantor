@@ -1,0 +1,9 @@
+$white: rgb(255, 255, 255);
+$darkBlue: rgb(21, 76, 141);
+$lightGray: rgb(200, 200, 200);
+
+:export {
+  white: $white;
+  darkBlue: $darkBlue;
+  lightGray: $lightGray;
+}

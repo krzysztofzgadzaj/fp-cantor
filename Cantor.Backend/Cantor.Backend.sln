@@ -1,0 +1,54 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cantor.Backend", "Cantor.Backend\Cantor.Backend.csproj", "{29DB8389-9B64-48DE-8752-59F4076B4B77}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{CEA69A15-1463-458C-B4CA-583FAE919D6E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "User", "User", "{E059F828-672F-4A8F-AA93-CBA56EB298C4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "User.Application", "User.Application\User.Application.csproj", "{E846893B-46F8-4827-AA5E-F8114654E8F7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "User.Infrastructure", "User.Infrastructure\User.Infrastructure.csproj", "{5EADD5E8-6220-4DA2-8A6A-CF05F56C7D36}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Cantor", "Cantor", "{4EE97492-BED5-4EC4-9B70-D897213E81B4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cantor.Application", "Cantor.Application\Cantor.Application.csproj", "{5D803EEC-73ED-484E-AE74-CFDA2BAD2A84}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cantor.Infrastructure", "Cantor.Infrastructure\Cantor.Infrastructure.csproj", "{2EEE28B2-9A5F-4A84-85A9-31C89E8D4256}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{29DB8389-9B64-48DE-8752-59F4076B4B77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29DB8389-9B64-48DE-8752-59F4076B4B77}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29DB8389-9B64-48DE-8752-59F4076B4B77}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29DB8389-9B64-48DE-8752-59F4076B4B77}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E846893B-46F8-4827-AA5E-F8114654E8F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E846893B-46F8-4827-AA5E-F8114654E8F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E846893B-46F8-4827-AA5E-F8114654E8F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E846893B-46F8-4827-AA5E-F8114654E8F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5EADD5E8-6220-4DA2-8A6A-CF05F56C7D36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5EADD5E8-6220-4DA2-8A6A-CF05F56C7D36}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5EADD5E8-6220-4DA2-8A6A-CF05F56C7D36}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5EADD5E8-6220-4DA2-8A6A-CF05F56C7D36}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D803EEC-73ED-484E-AE74-CFDA2BAD2A84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D803EEC-73ED-484E-AE74-CFDA2BAD2A84}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D803EEC-73ED-484E-AE74-CFDA2BAD2A84}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D803EEC-73ED-484E-AE74-CFDA2BAD2A84}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2EEE28B2-9A5F-4A84-85A9-31C89E8D4256}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2EEE28B2-9A5F-4A84-85A9-31C89E8D4256}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2EEE28B2-9A5F-4A84-85A9-31C89E8D4256}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2EEE28B2-9A5F-4A84-85A9-31C89E8D4256}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E059F828-672F-4A8F-AA93-CBA56EB298C4} = {CEA69A15-1463-458C-B4CA-583FAE919D6E}
+		{E846893B-46F8-4827-AA5E-F8114654E8F7} = {E059F828-672F-4A8F-AA93-CBA56EB298C4}
+		{5EADD5E8-6220-4DA2-8A6A-CF05F56C7D36} = {E059F828-672F-4A8F-AA93-CBA56EB298C4}
+		{4EE97492-BED5-4EC4-9B70-D897213E81B4} = {CEA69A15-1463-458C-B4CA-583FAE919D6E}
+		{5D803EEC-73ED-484E-AE74-CFDA2BAD2A84} = {4EE97492-BED5-4EC4-9B70-D897213E81B4}
+		{2EEE28B2-9A5F-4A84-85A9-31C89E8D4256} = {4EE97492-BED5-4EC4-9B70-D897213E81B4}
+	EndGlobalSection
+EndGlobal

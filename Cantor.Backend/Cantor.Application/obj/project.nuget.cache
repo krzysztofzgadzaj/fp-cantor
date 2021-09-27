@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "g0T6ss7S85sPgvYWoOlE1I1kcVDCXLqOtNecViHiEJBrcEx4ONr8xlcWJo3Rj0oSXZhWml9g+otj48azHwf3zg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\zgadz\\OneDrive\\Pulpit\\fp-cantor\\Cantor.Backend\\Cantor.Application\\Cantor.Application.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\zgadz\\.nuget\\packages\\mediatr\\9.0.0\\mediatr.9.0.0.nupkg.sha512",
+    "C:\\Users\\zgadz\\.nuget\\packages\\mediatr.extensions.microsoft.dependencyinjection\\9.0.0\\mediatr.extensions.microsoft.dependencyinjection.9.0.0.nupkg.sha512",
+    "C:\\Users\\zgadz\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\2.0.0\\microsoft.extensions.dependencyinjection.abstractions.2.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,401 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\zgadz\\OneDrive\\Pulpit\\fp-cantor\\Cantor.Backend\\Cantor.Backend\\Cantor.Backend.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\zgadz\\OneDrive\\Pulpit\\fp-cantor\\Cantor.Backend\\Cantor.Application\\Cantor.Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\zgadz\\OneDrive\\Pulpit\\fp-cantor\\Cantor.Backend\\Cantor.Application\\Cantor.Application.csproj",
+        "projectName": "Cantor.Application",
+        "projectPath": "C:\\Users\\zgadz\\OneDrive\\Pulpit\\fp-cantor\\Cantor.Backend\\Cantor.Application\\Cantor.Application.csproj",
+        "packagesPath": "C:\\Users\\zgadz\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\zgadz\\OneDrive\\Pulpit\\fp-cantor\\Cantor.Backend\\Cantor.Application\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\zgadz\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "MediatR": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "MediatR.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.300\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\zgadz\\OneDrive\\Pulpit\\fp-cantor\\Cantor.Backend\\Cantor.Backend\\Cantor.Backend.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\zgadz\\OneDrive\\Pulpit\\fp-cantor\\Cantor.Backend\\Cantor.Backend\\Cantor.Backend.csproj",
+        "projectName": "Cantor.Backend",
+        "projectPath": "C:\\Users\\zgadz\\OneDrive\\Pulpit\\fp-cantor\\Cantor.Backend\\Cantor.Backend\\Cantor.Backend.csproj",
+        "packagesPath": "C:\\Users\\zgadz\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\zgadz\\OneDrive\\Pulpit\\fp-cantor\\Cantor.Backend\\Cantor.Backend\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\zgadz\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\zgadz\\OneDrive\\Pulpit\\fp-cantor\\Cantor.Backend\\Cantor.Application\\Cantor.Application.csproj": {
+                "projectPath": "C:\\Users\\zgadz\\OneDrive\\Pulpit\\fp-cantor\\Cantor.Backend\\Cantor.Application\\Cantor.Application.csproj"
+              },
+              "C:\\Users\\zgadz\\OneDrive\\Pulpit\\fp-cantor\\Cantor.Backend\\Cantor.Infrastructure\\Cantor.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\zgadz\\OneDrive\\Pulpit\\fp-cantor\\Cantor.Backend\\Cantor.Infrastructure\\Cantor.Infrastructure.csproj"
+              },
+              "C:\\Users\\zgadz\\OneDrive\\Pulpit\\fp-cantor\\Cantor.Backend\\User.Infrastructure\\User.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\zgadz\\OneDrive\\Pulpit\\fp-cantor\\Cantor.Backend\\User.Infrastructure\\User.Infrastructure.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.10, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[5.6.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.300\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\zgadz\\OneDrive\\Pulpit\\fp-cantor\\Cantor.Backend\\Cantor.Infrastructure\\Cantor.Infrastructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\zgadz\\OneDrive\\Pulpit\\fp-cantor\\Cantor.Backend\\Cantor.Infrastructure\\Cantor.Infrastructure.csproj",
+        "projectName": "Cantor.Infrastructure",
+        "projectPath": "C:\\Users\\zgadz\\OneDrive\\Pulpit\\fp-cantor\\Cantor.Backend\\Cantor.Infrastructure\\Cantor.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\zgadz\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\zgadz\\OneDrive\\Pulpit\\fp-cantor\\Cantor.Backend\\Cantor.Infrastructure\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\zgadz\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\zgadz\\OneDrive\\Pulpit\\fp-cantor\\Cantor.Backend\\Cantor.Application\\Cantor.Application.csproj": {
+                "projectPath": "C:\\Users\\zgadz\\OneDrive\\Pulpit\\fp-cantor\\Cantor.Backend\\Cantor.Application\\Cantor.Application.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "MediatR": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "Microsoft.AspNetCore.Mvc": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
+              "target": "Package",
+              "version": "[5.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.10, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[5.0.10, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.300\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\zgadz\\OneDrive\\Pulpit\\fp-cantor\\Cantor.Backend\\User.Application\\User.Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\zgadz\\OneDrive\\Pulpit\\fp-cantor\\Cantor.Backend\\User.Application\\User.Application.csproj",
+        "projectName": "User.Application",
+        "projectPath": "C:\\Users\\zgadz\\OneDrive\\Pulpit\\fp-cantor\\Cantor.Backend\\User.Application\\User.Application.csproj",
+        "packagesPath": "C:\\Users\\zgadz\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\zgadz\\OneDrive\\Pulpit\\fp-cantor\\Cantor.Backend\\User.Application\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\zgadz\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "MediatR": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "MediatR.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.300\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\zgadz\\OneDrive\\Pulpit\\fp-cantor\\Cantor.Backend\\User.Infrastructure\\User.Infrastructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\zgadz\\OneDrive\\Pulpit\\fp-cantor\\Cantor.Backend\\User.Infrastructure\\User.Infrastructure.csproj",
+        "projectName": "User.Infrastructure",
+        "projectPath": "C:\\Users\\zgadz\\OneDrive\\Pulpit\\fp-cantor\\Cantor.Backend\\User.Infrastructure\\User.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\zgadz\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\zgadz\\OneDrive\\Pulpit\\fp-cantor\\Cantor.Backend\\User.Infrastructure\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\zgadz\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\zgadz\\OneDrive\\Pulpit\\fp-cantor\\Cantor.Backend\\User.Application\\User.Application.csproj": {
+                "projectPath": "C:\\Users\\zgadz\\OneDrive\\Pulpit\\fp-cantor\\Cantor.Backend\\User.Application\\User.Application.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "MediatR": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "Microsoft.AspNetCore.Mvc": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
+              "target": "Package",
+              "version": "[5.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.10, )"
+            },
+            "Microsoft.IdentityModel.Tokens": {
+              "target": "Package",
+              "version": "[6.12.2, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[5.0.10, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[6.12.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.300\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
