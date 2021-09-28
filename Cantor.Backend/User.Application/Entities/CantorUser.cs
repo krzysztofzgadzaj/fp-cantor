@@ -5,12 +5,14 @@ namespace User.Application.Entities
     public sealed class CantorUser
     {
         public CantorUser(
+            Guid id,
             string login, 
             string firstName, 
             string secondName, 
             string emailAddress, 
             byte[] password)
         {
+            Id = id;
             Login = login;
             FirstName = firstName;
             SecondName = secondName;

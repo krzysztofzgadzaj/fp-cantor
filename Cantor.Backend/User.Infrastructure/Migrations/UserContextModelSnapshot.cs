@@ -26,21 +26,33 @@ namespace User.Infrastructure.Migrations
                         .HasColumnType("uuid");
 
                     b.Property<string>("EmailAddress")
-                        .HasColumnType("text");
+                        .IsRequired()
+                        .HasColumnType("varchar(100)");
 
                     b.Property<string>("FirstName")
-                        .HasColumnType("text");
+                        .IsRequired()
+                        .HasColumnType("varchar(100)");
 
                     b.Property<string>("Login")
-                        .HasColumnType("text");
+                        .IsRequired()
+                        .HasColumnType("varchar(100)");
 
                     b.Property<byte[]>("Password")
+                        .IsRequired()
+                        .HasMaxLength(256)
                         .HasColumnType("bytea");
 
                     b.Property<string>("SecondName")
-                        .HasColumnType("text");
+                        .IsRequired()
+                        .HasColumnType("varchar(100)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("EmailAddress")
+                        .IsUnique();
+
+                    b.HasIndex("Login")
+                        .IsUnique();
 
                     b.ToTable("Users");
                 });

@@ -1,10 +1,7 @@
 import client from "@/shared/Http-client";
 import vm from "@/main";
 import { AuthenticationResultsDto } from "./dto";
-import {
-  UnsuccessfulAuthenticationMessage,
-  UserCreatedMessage
-} from "./constants";
+import { UnsuccessfulAuthenticationMessage } from "./constants";
 
 const service = {
   async signIn(credentials) {
@@ -22,15 +19,10 @@ const service = {
     }
   },
   async signUp(credentials) {
-    console.log(credentials);
     const resource = "/user";
     const response = await client.post(resource, credentials);
-    console.log("dupa5");
-    const isCreated =
-      response && (response.status === 200 || response.status === 201);
-    if (isCreated) {
-      vm.$snotify.success(UserCreatedMessage);
-    }
+
+    return response;
   }
 };
 

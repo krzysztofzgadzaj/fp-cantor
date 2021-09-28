@@ -25,6 +25,9 @@ namespace Cantor.Infrastructure.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
 
+                    b.Property<int>("ChfAmount")
+                        .HasColumnType("integer");
+
                     b.Property<int>("CzkAmount")
                         .HasColumnType("integer");
 
@@ -35,6 +38,9 @@ namespace Cantor.Infrastructure.Migrations
                         .HasColumnType("integer");
 
                     b.Property<int>("PlnAmount")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("RubAmount")
                         .HasColumnType("integer");
 
                     b.Property<int>("UsdAmount")

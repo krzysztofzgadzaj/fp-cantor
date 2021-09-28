@@ -1,56 +1,52 @@
 <template>
   <v-row justify="center">
-    <v-dialog v-model="visible" persistent max-width="600px">
+    <v-dialog v-model="visible" persistent max-width="600">
       <v-card>
-        <v-card-title>
-          <span class="text-h5">Register</span>
-        </v-card-title>
+        <v-toolbar class="mb-6" color="primary" dark flat>
+          <v-row justify="space-between">
+            <v-col>
+              <v-toolbar-title style="font-size: 30px"
+                >Register</v-toolbar-title
+              >
+            </v-col>
+            <v-col align="right">
+              <v-btn icon color="white darken-1" text @click="closeDialog">
+                <v-icon>mdi-close</v-icon>
+              </v-btn>
+            </v-col>
+          </v-row>
+          <template v-slot:extension>
+            <v-tabs>
+              <v-tab
+                style="color: white; margin: 0"
+                v-for="tab in Tabs"
+                v-bind:key="tab.key"
+                v-on:click="changeSelectedDataTab(tab.key)"
+              >
+                {{ tab.name }}
+              </v-tab>
+            </v-tabs>
+          </template>
+        </v-toolbar>
         <v-card-text>
-          <v-form v-model="validated">
-            <v-row>
-              <v-col cols="12" md="6" sm="3">
-                <v-text-field
-                  v-model="name"
-                  :rules="firstNameRules"
-                  label="First name"
-                  required
-                ></v-text-field>
-              </v-col>
-              <v-col cols="12" md="6" sm="6">
-                <v-text-field
-                  v-model="lastName"
-                  :rules="lastNameRules"
-                  label="Last name"
-                  required
-                ></v-text-field>
-              </v-col>
-              <v-col cols="12">
-                <v-text-field
-                  v-model="login"
-                  :rules="loginRules"
-                  label="Login"
-                  required
-                ></v-text-field>
-              </v-col>
-              <v-col cols="12">
-                <v-text-field
-                  v-model="mailAddress"
-                  :rules="mailRules"
-                  label="Email"
-                  required
-                ></v-text-field>
-              </v-col>
-              <v-col cols="12">
-                <v-text-field
-                  v-model="password"
-                  :rules="passwordRules"
-                  label="Password"
-                  required
-                  type="password"
-                ></v-text-field>
-              </v-col>
-            </v-row>
-          </v-form>
+          <div v-show="selectedDataKey === TabKeys.UserData">
+            <user-template
+              v-on:userDataValidationChanged="changeSaveButtonAccessibility"
+              v-on:userDataSaved="saveInvestmentPortfolioData"
+              v-bind:signing-up-finished="signingUpFinished"
+              v-bind:dialog-closed="userDialogClosed"
+              v-on:dialogCleaned="resetUserMechanics"
+            />
+          </div>
+          <div v-show="selectedDataKey === TabKeys.InvestmentPortfolioData">
+            <investment-portfolio-template
+              v-bind:user-id="newUserId"
+              v-bind:investment-saving-started="investmentSavingStarted"
+              v-on:dataSaved="closeDialog"
+              v-bind:dialog-closed="investmentDialogClosed"
+              v-on:dialogCleaned="resetInvestmentMechanics"
+            />
+          </div>
         </v-card-text>
         <v-card-actions>
           <v-spacer></v-spacer>
@@ -58,10 +54,10 @@
             Close
           </v-btn>
           <v-btn
-            v-bind:disabled="!validated"
+            v-bind:disabled="!userDataValidated"
             color="blue darken-1"
             text
-            v-on:click="register"
+            v-on:click="saveUserData"
           >
             Save
           </v-btn>
@@ -73,58 +69,67 @@
 
 <script>
 import { Theme } from "@/shared/constants";
-import { mapActions } from "vuex";
-import {
-  FormValidationMessages,
-  FormValidationRegularExpressions
-} from "@/Pages/Login/constants";
+import { Tabs, TabKeys } from "./constants";
+import InvestmentPortfolioTemplate from "./Components/InvestmentPortfolioDataTemplate";
+import UserTemplate from "./Components/UserDataTemplate";
 
 export default {
   data: () => ({
     Theme,
-    validated: false,
-    lastName: "",
-    name: "",
-    mailAddress: "",
-    login: "",
-    password: "",
-    firstNameRules: [v => !!v || FormValidationMessages.NoInformationMessage],
-    lastNameRules: [v => !!v || FormValidationMessages.NoInformationMessage],
-    loginRules: [v => !!v || FormValidationMessages.NoInformationMessage],
-    passwordRules: [
-      v => !!v || FormValidationMessages.NoInformationMessage,
-      v =>
-        FormValidationRegularExpressions.PasswordRegex.test(v) ||
-        FormValidationMessages.InvalidPasswordMessage
-    ],
-    mailRules: [
-      v => !!v || FormValidationMessages.NoInformationMessage,
-      v =>
-        FormValidationRegularExpressions.MailAddressRegex.test(v) ||
-        FormValidationMessages.InvalidMailAddressMessage
-    ]
+    Tabs,
+    TabKeys,
+    selectedDataKey: TabKeys.UserData,
+    userDataValidated: false,
+    signingUpFinished: false,
+    investmentSavingStarted: false,
+    newUserId: null,
+    userDialogClosed: false,
+    investmentDialogClosed: false
   }),
+  components: {
+    InvestmentPortfolioTemplate,
+    UserTemplate
+  },
   methods: {
-    ...mapActions("userModule", ["signUp"]),
-    async register() {
-      console.log("dupa1");
-      const credentials = {
-        login: this.login,
-        password: this.password,
-        mailAddress: this.mailAddress,
-        name: this.name,
-        lastName: this.lastName
-      };
-      console.log("dupa2");
-      await this.signUp(credentials);
-      this.close();
+    async saveUserData() {
+      this.signingUpFinished = true;
+    },
+    saveInvestmentPortfolioData(userId) {
+      this.signingUpFinished = false;
+      this.newUserId = userId;
+      this.investmentSavingStarted = true;
+    },
+    changeSelectedDataTab(newDataTabKey) {
+      this.selectedDataKey = newDataTabKey;
     },
     closeDialog() {
+      this.resetDialog();
       this.$emit("registerDialogClosed");
+    },
+    changeSaveButtonAccessibility(validated) {
+      this.userDataValidated = validated;
+    },
+    resetDialog() {
+      this.selectedDataKey = TabKeys.UserData;
+      this.userDataValidated = false;
+      this.signingUpFinished = false;
+      this.investmentSavingStarted = false;
+      this.newUserId = null;
+      this.userDialogClosed = true;
+      this.investmentDialogClosed = true;
+    },
+    resetUserMechanics() {
+      this.userDialogClosed = false;
+    },
+    resetInvestmentMechanics() {
+      this.investmentDialogClosed = false;
     }
   },
   props: {
     visible: Boolean(false)
+  },
+  mounted() {
+    this.currencyItems = this.Currencies;
   }
 };
 </script>

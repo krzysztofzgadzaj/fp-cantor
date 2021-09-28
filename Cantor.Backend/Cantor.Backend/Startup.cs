@@ -13,6 +13,8 @@ namespace Cantor.Backend
 {
     public class Startup
     {
+        
+        
         private readonly IConfiguration _configuration;
 
         public Startup(IConfiguration configuration)
@@ -26,7 +28,19 @@ namespace Cantor.Backend
                 .AddUserInfrastructureDependencies(_configuration)
                 .AddCantorApplicationDependencies()
                 .AddCantorInfrastructureDependencies(_configuration)
-                .AddSwagger(_configuration);
+                .AddSwagger(_configuration)
+                .AddCors(options =>
+                {
+                    options.AddPolicy("corsPolicy", config =>
+                    {
+                        var origins = _configuration.GetSection("AllowedOrigins").Get<string[]>();
+
+                        foreach (var origin in origins)
+                        {
+                            config.WithOrigins(origin).AllowAnyHeader().AllowAnyMethod().AllowCredentials();
+                        }
+                    });
+                });
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
@@ -34,8 +48,8 @@ namespace Cantor.Backend
             {
                 app.UseDeveloperExceptionPage();
             }
-
-            app.UseHttpsRedirection();
+            
+            app.UseCors("corsPolicy");
             app.UseRouting();
             app.UseAuthorization();
             app.UseEndpoints(endpoints => { endpoints.MapControllers(); });

@@ -1,5 +1,6 @@
 ﻿using System.Threading.Tasks;
 using Cantor.Application.Contracts.Commands;
+using Cantor.Application.Contracts.Queries;
 using Cantor.Application.Entities;
 using Cantor.Application.Repositories;
 using Cantor.Infrastructure.Persistence.Context;
@@ -38,6 +39,14 @@ namespace Cantor.Infrastructure.Persistence.Repositories
 
             _cantorContext.Update(investmentPortfolio);
             await _cantorContext.SaveChangesAsync();
+        }
+
+        public async Task<InvestmentPortfolio> GetPortfolio(GetInvestmentPortfolioQuery request)
+        {
+            var userId = request.UserId;
+            var portfolio = await _cantorContext.Portfolios.FirstOrDefaultAsync(x => x.UserId == userId);
+
+            return portfolio;
         }
     }
 }

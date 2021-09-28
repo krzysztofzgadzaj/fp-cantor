@@ -2,13 +2,13 @@ import Vue from "vue";
 import Vuex from "vuex";
 
 import userModule from "@/shared/modules/User/module";
-import requestModule from "@/shared/modules/Request/module";
+import investmentPortfolioModule from "@/shared/modules/InvestmentPortfolio/module";
 
 Vue.use(Vuex);
 
 const modules = {
   userModule,
-  requestModule
+  investmentPortfolioModule
 };
 
 const store = new Vuex.Store({

@@ -5,7 +5,14 @@ namespace Cantor.Application.Entities
 {
     public class InvestmentPortfolio
     {
-        public InvestmentPortfolio(Guid userId, int gbpAmount, int eurAmount, int usdAmount, int czkAmount, int plnAmount)
+        public InvestmentPortfolio(Guid userId, 
+            int gbpAmount, 
+            int eurAmount, 
+            int usdAmount, 
+            int czkAmount, 
+            int plnAmount, 
+            int chfAmount, 
+            int rubAmount)
         {
             UserId = userId;
             GbpAmount = gbpAmount;
@@ -13,6 +20,8 @@ namespace Cantor.Application.Entities
             UsdAmount = usdAmount;
             CzkAmount = czkAmount;
             PlnAmount = plnAmount;
+            ChfAmount = chfAmount;
+            RubAmount = rubAmount;
         }
 
         public Guid Id { get; set; }
@@ -22,6 +31,8 @@ namespace Cantor.Application.Entities
         public int UsdAmount { get; set; }
         public int CzkAmount { get; set; }
         public int PlnAmount { get; set; }
+        public int ChfAmount { get; set; }
+        public int RubAmount { get; set; }
 
         public static explicit operator InvestmentPortfolio(CreateInvestmentPortfolioCommand command) =>
             new InvestmentPortfolio(
@@ -30,6 +41,8 @@ namespace Cantor.Application.Entities
                 command.EurAmount,
                 command.UsdAmount, 
                 command.CzkAmount, 
-                command.PlnAmount);
+                command.PlnAmount,
+                command.ChfAmount,
+                command.RubAmount);
     }
 }

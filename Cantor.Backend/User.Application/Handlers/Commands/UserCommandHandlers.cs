@@ -18,20 +18,21 @@ namespace User.Application.Handlers.Commands
             _userRepository = userRepository;
         }
         
-        public Task<Unit> Handle(CreateUserCommand request, CancellationToken cancellationToken)
+        public async Task<Unit> Handle(CreateUserCommand request, CancellationToken cancellationToken)
         {
             var passwordAsBytes = Encoding.ASCII.GetBytes(request.Password);
 
             var user = new CantorUser(
+                request.Id,
                 request.Login, 
                 request.FirstName, 
                 request.SecondName, 
                 request.EmailAddress,
                 passwordAsBytes);
 
-            _userRepository.Create(user);
+            await _userRepository.Create(user);
 
-            return null;
+            return Unit.Value;
         }
     }
 }

@@ -1,10 +1,9 @@
 import axios from "axios";
 import vm from "@/main";
-import store from "@/store";
 import { DefaultErrorMessage, LocalStorageJwtKey } from "./constants";
 
 const api = axios.create({
-  baseURL: "http://localhost:5081/api"
+  baseURL: "http://localhost:5080/api"
 });
 
 function showExceptionMessage(error) {
@@ -13,30 +12,6 @@ function showExceptionMessage(error) {
     : DefaultErrorMessage;
   vm.$snotify.error(message);
 }
-
-api.interceptors.request.use(
-  config => {
-    // ToDo: eventually omit the commit if ceratin request demands no overlay
-    store.commit("requestModule/incrementPendingRequestCount");
-    return config;
-  },
-  error => Promise.reject(error)
-);
-
-api.interceptors.response.use(
-  response => {
-    // ToDo: eventually omit the commit if ceratin request demands no overlay
-    store.commit("requestModule/decrementPendingRequestCount");
-    return response;
-  },
-  error => {
-    // ToDo: eventually omit the commit if ceratin request demands no overlay
-    store.commit("requestModule/decrementPendingRequestCount");
-    // ToDo: logout if token expired
-    // ToDo: handle error in specific way if needed
-    return Promise.reject(error);
-  }
-);
 
 const client = {
   async get(resource, params, handleError = true) {
@@ -58,9 +33,7 @@ const client = {
     }
   },
   async post(resource, data, params, handleError = true) {
-    console.log(data);
     const token = localStorage.getItem(LocalStorageJwtKey);
-    console.log(token);
     const config = {
       params,
       headers: {
@@ -68,12 +41,8 @@ const client = {
       }
     };
     try {
-      console.log(resource);
-      console.log(data);
-
       return await api.post(resource, data, config);
     } catch (e) {
-      console.log(e);
       if (handleError) {
         showExceptionMessage(e);
       } else {

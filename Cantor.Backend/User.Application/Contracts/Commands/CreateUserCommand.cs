@@ -1,8 +1,10 @@
-﻿using User.Application.Contracts.Commands.Base;
+﻿using System;
+using User.Application.Contracts.Commands.Base;
 
 namespace User.Application.Contracts.Commands
 {
     public sealed record CreateUserCommand(
+        Guid Id,
         string Login,
         string FirstName,
         string SecondName,

@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System.Reflection;
+using Microsoft.EntityFrameworkCore;
 using User.Application.Entities;
 
 namespace User.Infrastructure.Persistence.Context
@@ -13,5 +14,21 @@ namespace User.Infrastructure.Persistence.Context
         }
         
         public DbSet<CantorUser> Users { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder
+                .ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+                
+            modelBuilder
+                .Entity<CantorUser>()
+                .HasIndex(x => x.Login)
+                .IsUnique();
+            
+            modelBuilder
+                .Entity<CantorUser>()
+                .HasIndex(x => x.EmailAddress)
+                .IsUnique();
+        }
     }
 }

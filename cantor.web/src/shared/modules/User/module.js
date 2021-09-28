@@ -15,8 +15,7 @@ const actions = {
     commit("setAuthenticationResults", authenticationResult);
   },
   async signUp(state, credentials) {
-    console.log("dupa3");
-    await userService.signUp(credentials);
+    return await userService.signUp(credentials);
   }
 };
 

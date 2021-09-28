@@ -1,9 +1,9 @@
-import homePage from "./index"
+const Home = () => import("./index");
 
 const homeRoutes = {
-    name: "home",
-    path: "/home",
-    component: homePage
+  name: "home",
+  path: "/home",
+  component: Home
 };
 
 export default homeRoutes;

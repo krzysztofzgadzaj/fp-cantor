@@ -9,5 +9,7 @@ namespace Cantor.Application.Contracts.Commands
         int EurAmount,
         int UsdAmount,
         int CzkAmount,
+        int ChfAmount,
+        int RubAmount,
         int PlnAmount) : ICommand;
 }

@@ -3,12 +3,13 @@ using Microsoft.AspNetCore.Mvc;
 using User.Application.Contracts.Queries;
 using User.Application.Dto;
 using User.Application.Handlers.Queries.Base;
+using User.Infrastructure.Controllers.Base;
 
 namespace User.Infrastructure.Controllers
 {
     [ApiController]
-    [Route("api/v1.0/[controller]")]
-    public class AuthenticationController : ControllerBase
+    [Route(RoutePattern)]
+    public class AuthenticationController : BaseController
     {
         private readonly IQueryBus _queryBus;
         
